@@ -29,6 +29,9 @@ class App extends Component{
 		return (
 			<ul className="list-group col-sm-4">
 			{
+				//Just to loop through the reminders object, below arrow funciton exprression is created.
+				//It is similar in behaviour to reminders.map(function(reminder){<do the steps>}).
+				//Arrow function looks neater :-) and also doesnt have its own "this" etc.//
 				reminders.map(reminder  => {
 					return(
 						<li key={reminder.id} className="list-group-item">
@@ -38,6 +41,8 @@ class App extends Component{
 						</div>
 						<div 
 						className="list-item delete-button"
+						//A () before => implies that the function is called without any parameters.
+						// similar to function(){<do the steps>}
 						onClick={() => this.deleteReminder(reminder.id)}>
 						  &#x2715;
 						</div>
